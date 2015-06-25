@@ -1,0 +1,66 @@
+#include<stdio.h>
+int cycle(int n);
+int main()
+{
+    int n1,n2;
+    while(scanf("%d %d",&n1,&n2)==2)
+    {
+        int temp=0,t,i;
+        if(n1<n2)
+        {
+                for(i=n1;i<=n2;i++)
+            {
+                t = cycle(i);
+                if(t>temp)
+                    temp = t;
+            }
+            printf("%d %d %d\n",n1,n2,temp);
+        }
+        else if(n1>n2)
+        {
+                for(i=n2;i<=n1;i++)
+            {
+                t = cycle(i);
+                if(t>temp)
+                    temp = t;
+            }
+            printf("%d %d %d\n",n1,n2,temp);
+        }
+        else if(n1==n2)
+        {
+            t = cycle(n1);
+            printf("%d %d %d\n",n1,n2,t);
+        }
+
+
+    }
+    return 0;
+}
+int cycle( int n)
+{
+    int c,j,count=0;
+
+    for(j=1;;j++)
+    {
+        if(n==1)
+        {
+            count++;
+            break;
+        }
+
+        else if(n%2==0)
+           {
+                n = n/2;
+                count++;
+
+           }
+          else if(n%2==1)
+            {
+                n = 3*n+1;
+                count++;
+            }
+
+    }
+    c = count;
+    return c;
+}
