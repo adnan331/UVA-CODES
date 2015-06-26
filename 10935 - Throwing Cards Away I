@@ -1,0 +1,43 @@
+#include<iostream>
+#include<cstdio>
+#include<deque>
+using namespace std;
+int main()
+{
+    int n;
+    while(cin>>n && n!=0)
+    {
+        if(n==1)
+        {
+            cout<<"Discarded cards:\nRemaining card: 1\n";
+            continue;
+        }
+        deque<int>c;
+        for(int i=n;i>=1;i--)
+        {
+            c.push_front(i);
+
+
+        }
+
+        cout<<"Discarded cards: ";
+        while(c.size()>1)
+        {
+
+            cout<<c.front();
+            c.pop_front();
+            c.push_back(c.front());
+            c.pop_front();
+            if(c.size()>1)
+            {
+                cout<<", ";
+            }
+            else
+                cout<<endl;
+
+        }
+
+        cout<<"Remaining card: "<<c.front()<<endl;
+    }
+    return 0;
+}
