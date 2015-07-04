@@ -1,0 +1,13 @@
+#include<bits/stdc++.h>
+using namespace std;
+int main ()
+{
+   long long int temp,n;
+    while(scanf("%lld",&n)==1)
+    {
+        temp = (n*(n+1))/2;
+       temp = temp*temp;
+        printf("%lld\n",temp);
+    }
+    return 0;
+}
