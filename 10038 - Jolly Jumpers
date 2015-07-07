@@ -1,0 +1,36 @@
+#include<iostream>
+#include<cstdio>
+#include<algorithm>
+#include<cstdlib>
+using namespace std;
+int main()
+{
+    int n,num[3000],d1[3000],d2[3000],i,j;
+    while(cin>>n)
+    {
+        for(i=0;i<n;i++)
+        {
+            cin>>num[i];
+
+        }
+        for(j=0;j<n-1;j++)
+        {
+            d1[i]=abs(num[i]-num[i+1]);
+        }
+        sort(d1,d1+i);
+        int c=1;
+        for(i=1;i<n-2;i++)
+        {
+            if(d1[i-1]!=i)
+            c=0;
+
+        }
+        if(c==1)
+            cout<<"Jolly\n";
+        else
+            cout<<"Not jolly\n";
+
+    }
+    
+    return 0;
+}
