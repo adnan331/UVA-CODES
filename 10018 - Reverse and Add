@@ -1,0 +1,43 @@
+#include<iostream>
+#include<cstdio>
+using namespace std;
+
+long long rev(long long n)
+{
+    long long rem=0;
+    while(n!=0)
+    {
+         rem = rem*10+n%10;
+         n/=10;
+    }
+    return rem;
+}
+
+
+
+
+int main()
+{
+    int t;
+    long long n,r,sum;
+    cin>>t;
+    while(t--)
+    {
+        cin>>n;
+        int step=0;
+       while(1)
+       {
+           r = rev(n);
+        sum = n+r;
+        step++;
+        if(sum==rev(sum))
+        {
+            cout<<step<<" "<<sum<<endl;
+            break;
+        }
+        else
+            n=sum;
+       }
+    }
+    return 0;
+}
