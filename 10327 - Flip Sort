@@ -1,0 +1,27 @@
+#include<iostream>
+#include<cstdio>
+using namespace std;
+int main()
+{
+    int n,num[1000];
+    while(cin>>n)
+    {
+        int m=n,cnt=0;
+        int i=0,j;
+        while(n--)
+        {
+            cin>>num[i++];
+        }
+        for(i=0;i<m-1;i++)
+        {
+            for(j=i+1;j<m;j++)
+            {
+                if(num[i]>num[j])
+                    cnt++;
+            }
+        }
+        cout<<"Minimum exchange operations : "<<cnt<<endl;
+    }
+
+    return 0;
+}
