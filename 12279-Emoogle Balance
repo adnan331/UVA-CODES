@@ -1,0 +1,23 @@
+#include<iostream>
+#include<cstdio>
+using namespace std;
+int main()
+{
+    int e,n,no=0;
+    while(cin>>e && e!=0)
+    {
+        no++;
+        int s=0,g=0;;
+
+        while(e--)
+        {
+            cin>>n;
+            if(n>='1'-'0' && n<='99'-'0')
+                s++;
+            else
+                g++;
+        }
+        cout<<"Case " <<no<<": "<<s-g<<endl;
+    }
+    return 0;
+}
