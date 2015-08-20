@@ -1,0 +1,30 @@
+#include<iostream>
+#include<cstdio>
+using namespace std;
+int main()
+{
+    int t,n,i;
+    double st[1000],sum,av,aav;
+    cin>>t;
+    while(t--)
+    {
+        sum=0;
+        cin>>n;
+        for(i=0;i<n;i++)
+        {
+            cin>>st[i];
+            sum+=st[i];
+        }
+        av = sum/n;
+        aav=0;
+        for(i=0;i<n;i++)
+        {
+            if(st[i]>av)
+                aav++;
+        }
+        printf("%.3lf",(aav*100)/n);
+        cout<<"%\n";
+
+    }
+    return 0;
+}
