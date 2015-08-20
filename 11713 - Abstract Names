@@ -1,0 +1,49 @@
+#include<iostream>
+#include<string>
+#include<cstdio>
+using namespace std;
+class playerInfo
+{
+    public:
+        string name;
+
+};
+int main()
+{
+    int t,i,tmp;
+    cin>>t;
+    playerInfo p1,p2;
+    while(t--)
+    {
+        tmp=0;
+        cin>>p1.name>>p2.name;
+        if(p1.name.length() != p2.name.length())
+            cout<<"No\n";
+        else
+        {
+            for(i=0; i<p1.name.length();i++)
+            {
+               if(p1.name[i]!='a'&&p1.name[i]!='e'&&p1.name[i]!='i'&&p1.name[i]!='o'&&p1.name[i]!='u')
+               {
+                   if(p2.name[i]!=p1.name[i])
+                    {
+                        tmp=0;
+                        break;
+                    }
+                    else
+                        {
+                            tmp=1;
+                        }
+               }
+               else
+                continue;
+            }
+            if(tmp==1)
+                cout<<"Yes\n";
+            else
+                cout<<"No\n";
+        }
+    }
+
+    return 0;
+}
