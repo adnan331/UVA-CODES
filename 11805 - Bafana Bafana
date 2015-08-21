@@ -1,0 +1,24 @@
+#include<iostream>
+#include<cstdio>
+#include<string>
+using namespace std;
+int main()
+{
+    int t,no=0,n,k,p,i,j;
+    cin>>t;
+    while(t--)
+        {
+            no++;
+            cin>>n>>k>>p;
+            for(i=1,j=k; i<=p; i++)
+            {
+                if(j==n)
+                    j=1;
+                else
+                    j++;
+            }
+            printf("Case %d: %d\n",no,j);
+
+        }
+        return 0;
+}
