@@ -1,0 +1,27 @@
+#include<iostream>
+#include<cstdio>
+#include<string>
+using namespace std;
+int main()
+{
+    int i,l,tmp;
+    string s;
+    while(cin>>s && s!="0")
+    {
+        tmp=0;
+        l=s.size();
+        for(i=0;i<l;i++)
+        {
+            tmp = tmp*10+s[i]-'0';
+            tmp = tmp%11;
+        }
+        if(tmp==0 && l==1)
+            cout<<s<<" is not a multiple of 11.\n";
+        else if(tmp==0)
+            cout<<s<<" is a multiple of 11.\n";
+        else
+            cout<<s<<" is not a multiple of 11.\n";
+
+    }
+    return 0;
+}
